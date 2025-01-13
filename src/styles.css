@@ -55,3 +55,82 @@ h3,h4,h5,h6 {
 .dropdown-content.visible {
     display: block;
 }
+
+.image-carousel {
+    min-height: 400px;
+    width: 100%;
+    background-color: aqua;
+    padding-inline: clamp(40px, 1rem, 60px);
+    padding-top: 15px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.image-container {
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+.image {
+    flex: 0 0 auto;
+    display: none;
+}
+.image.selected{
+    flex: 1 0 auto;
+    min-height: 450px;
+    display: block;
+}
+
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+}
+.green {
+    background-color: green;
+}
+.orange {
+    background-color: orange;
+}
+.image-control-left, .image-control-right {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: coral;
+    position:relative;
+}
+.image-control-left::after, .image-control-right::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-color: white;
+    border-style: solid;
+    background-color: transparent;
+    width: 6px;
+    height: 6px;
+}
+
+.image-control-left::after{
+    border-width: 4px 0 0 4px;
+    transform: rotate(-45deg);
+
+}
+.image-control-right::after{
+    border-width: 4px 4px 0 0px;
+    transform: rotate(45deg);
+}
+
+.image-control-left:hover, .image-control-right:hover {
+    cursor: pointer;
+    background-color: hsl(16, 100%, 60%);
+}
+
+.image-control-left:active, .image-control-right:active {
+    cursor: pointer;
+    background-color: hsl(16, 80%, 51%);
+}
