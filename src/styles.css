@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Afacad";
+    src: url("./Afacad_Flux/AfacadFlux-VariableFont_slnt\,wght.ttf")
+    format("truetype");
+    font-weight: 100 900;
+    font-stretch: 75% 125%;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Oswald";
+    src: url("./Oswald/Oswald-VariableFont_wght.ttf")
+    format("truetype");
+    font-weight: 400 700;
+    font-stretch: 75% 125%;
+    font-style: normal;
+}
+/* @link https://utopia.fyi/type/calculator?c=680,18,1.125,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+    --step--2: clamp(0.8rem, 0.9968rem + -0.254vw, 0.8889rem);
+    --step--1: clamp(1rem, 1rem + 0vw, 1rem);
+    --step-0: clamp(1.125rem, 0.9732rem + 0.3571vw, 1.25rem);
+    --step-1: clamp(1.2656rem, 0.9051rem + 0.8482vw, 1.5625rem);
+    --step-2: clamp(1.4238rem, 0.7811rem + 1.5123vw, 1.9531rem);
+    --step-3: clamp(1.6018rem, 0.5823rem + 2.3989vw, 2.4414rem);
+    --step-4: clamp(1.802rem, 0.2845rem + 3.5706vw, 3.0518rem);
+    --step-5: clamp(2.0273rem, -0.1431rem + 5.1069vw, 3.8147rem);
+    font-size: var(--step-1);
+}
+body {
+    font-family: "Afacad";
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 800px;
+    margin-inline: auto;
+    padding-inline: clamp(30px, 1rem, 50px);
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Oswald";
+    font-weight: 400;
+}
+h1 {
+    font-size: var(--step-5);
+}
+h2 {
+    font-size: var(--step-4);
+}
+h3,h4,h5,h6 {
+    font-size: var(--step-3);
+}
