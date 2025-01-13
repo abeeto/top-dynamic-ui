@@ -48,3 +48,10 @@ h2 {
 h3,h4,h5,h6 {
     font-size: var(--step-3);
 }
+
+.dropdown-content {
+    display: none;
+}
+.dropdown-content.visible {
+    display: block;
+}

@@ -1,3 +1,9 @@
 import "./styles.css";
+import giveDropdownBehavior from "./giveDropdownBehavior";
 
-console.log("Hi! This is the entry point for the bundler");
+const allDropdowns = document.querySelectorAll(".dropdown");
+allDropdowns.forEach((dropdown) => {
+  giveDropdownBehavior({
+    dropdownWrapperNode: dropdown,
+  });
+});
