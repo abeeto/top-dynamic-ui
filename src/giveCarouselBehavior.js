@@ -4,16 +4,6 @@ function getImages(wrapper) {
 function getNavCircles(wrapper) {
   return Array.from(wrapper.querySelectorAll(".nav-circle"));
 }
-function addNavCircles(wrapper, numOfCircles) {
-  const circlesWrapperNode = document.createElement("div");
-  circlesWrapperNode.classList.add("nav-circles-wrapper");
-  for (let circleIndex = 0; circleIndex < numOfCircles; circleIndex += 1) {
-    const circleToAdd = document.createElement("div");
-    circleToAdd.classList.add("nav-circle");
-    circlesWrapperNode.appendChild(circleToAdd);
-  }
-  wrapper.appendChild(circlesWrapperNode);
-}
 
 function getImageControls(wrapper) {
   const goPrevImageControl = wrapper.querySelector(".image-control-left");
@@ -30,6 +20,23 @@ function deselectNodes(nodes) {
 
 function selectNodes(nodes) {
   nodes.forEach((node) => node.classList.add("selected"));
+}
+
+function addNavCircles(wrapper, numOfCircles) {
+  const circlesWrapperNode = document.createElement("div");
+  circlesWrapperNode.classList.add("nav-circles-wrapper");
+  for (let circleIndex = 0; circleIndex < numOfCircles; circleIndex += 1) {
+    const circleToAdd = document.createElement("div");
+    circleToAdd.classList.add("nav-circle");
+    circleToAdd.addEventListener("click", (e) => {
+      const currentSelectedNodes = wrapper.querySelectorAll(".selected");
+      deselectNodes(currentSelectedNodes);
+      const allImages = getImages(wrapper);
+      selectNodes([allImages[circleIndex], e.target]);
+    });
+    circlesWrapperNode.appendChild(circleToAdd);
+  }
+  wrapper.appendChild(circlesWrapperNode);
 }
 
 function findIndexOfFirstSelectedNode(nodesArray) {
